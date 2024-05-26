@@ -24,7 +24,7 @@ const ensureAuthenticated = function (req, res, next) {
 const middleware = [
   // Middleware for enabling CORS
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://main.d16slcwpn8sj8r.amplifyapp.com",
     credentials: true,
   }),
 
