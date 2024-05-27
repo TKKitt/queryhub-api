@@ -8,8 +8,5 @@ module.exports = {
     resave: process.env.SESSION_RESAVE === "true",
     saveUninitialized: process.env.SAVE_UNINITIALIZED === "true",
   },
-  allowedOrigins: [
-    "http://localhost:3000",
-    "https://main.d16slcwpn8sj8r.amplifyapp.com",
-  ],
+  allowedOrigins: ["http://localhost:3000", "https://www.queryhub-24.com"],
 };
