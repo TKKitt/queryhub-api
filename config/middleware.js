@@ -23,7 +23,10 @@ const ensureAuthenticated = function (req, res, next) {
 const middleware = [
   // Middleware for enabling CORS
   cors({
-    origin: "https://main.d16slcwpn8sj8r.amplifyapp.com",
+    origin:
+      process.env.NODE_ENV === "production"
+        ? "https://main.d16slcwpn8sj8r.amplifyapp.com"
+        : "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
@@ -41,9 +44,9 @@ const middleware = [
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       httpOnly: true,
-      sameSite: "none",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 24 * 60 * 60 * 1000,
     },
   }),
