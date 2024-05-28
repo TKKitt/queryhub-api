@@ -42,7 +42,6 @@ const middleware = [
     resave: config.session.resave,
     saveUninitialized: config.session.saveUninitialized,
     cookie: {
-      secure: true,
       httpOnly: true,
       sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000,
