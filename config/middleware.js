@@ -42,11 +42,10 @@ const middleware = [
     resave: config.session.resave,
     saveUninitialized: config.session.saveUninitialized,
     cookie: {
-      secure: false,
+      secure: process.env.NODE_ENV === "production",
       httpOnly: true,
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 24 * 60 * 60 * 1000,
-      domain: "https://main.d16slcwpn8sj8r.amplifyapp.com",
     },
   }),
 
