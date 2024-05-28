@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const routes = require("../routes/routes");
 const { middleware } = require("./middleware");
-const config = require("./config");
 
 function createApp() {
   const app = express();
@@ -18,8 +17,8 @@ function createApp() {
 
 const start = () => {
   const app = createApp();
-  app.listen(config.port, () => {
-    console.log(`Server is running on port ${config.port}`);
+  app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
   });
 };
 

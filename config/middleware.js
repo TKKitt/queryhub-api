@@ -2,7 +2,6 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("./passport");
 const cors = require("cors");
-const config = require("./config");
 
 const errorHandler = (err, req, res, next) => {
   console.error(err.stack);
@@ -37,13 +36,13 @@ const middleware = [
 
   // Session middleware
   session({
-    name: config.session.name,
-    secret: config.session.secret,
-    resave: config.session.resave,
-    saveUninitialized: config.session.saveUninitialized,
+    name: process.env.SESSION_NAME,
+    secret: process.env.SESSION_SECRET,
+    resave: process.env.SESSION_RESAVE,
+    saveUninitialized: process.env.SESSION_SAVE_UNINITIALIZED,
     cookie: {
-      secure: config.session.cookie.secure,
-      // httpOnly: true,
+      secure: true,
+      httpOnly: true,
       sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000,
     },
