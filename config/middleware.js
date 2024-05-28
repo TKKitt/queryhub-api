@@ -52,9 +52,9 @@ const middleware = [
     store: sessionStore, // Use the session store
     cookie: {
       // secure: process.env.NODE_ENV === "production",
-      secure: true,
+      secure: false,
       httpOnly: true,
-      sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 24 * 60 * 60 * 1000,
     },
   }),
