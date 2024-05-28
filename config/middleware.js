@@ -43,6 +43,7 @@ const middleware = [
     saveUninitialized: config.session.saveUninitialized,
     cookie: {
       httpOnly: true,
+      secure: true,
       sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000,
     },
