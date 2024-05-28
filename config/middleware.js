@@ -1,7 +1,13 @@
 const express = require("express");
 const session = require("express-session");
 const passport = require("./passport");
+const sequelize = require("./db");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const cors = require("cors");
+
+const sessionStore = new SequelizeStore({
+  db: sequelize,
+});
 
 const errorHandler = (err, req, res, next) => {
   console.error(err.stack);
@@ -43,6 +49,7 @@ const middleware = [
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    store: sessionStore, // Use the session store
     cookie: {
       secure: process.env.NODE_ENV === "production",
       httpOnly: true,
