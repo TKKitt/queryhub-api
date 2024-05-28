@@ -124,7 +124,7 @@ router.get("/google/callback", function (req, res, next) {
         }
         req.session.userId = user.id;
 
-        return res.redirect("http://localhost:3000/home");
+        return res.redirect("https://main.d16slcwpn8sj8r.amplifyapp.com/home");
       } catch (err) {
         console.error(err);
         return next(err);
