@@ -7,6 +7,7 @@ module.exports = {
     secret: process.env.SESSION_SECRET || "default_secret",
     resave: process.env.SESSION_RESAVE === "true",
     saveUninitialized: process.env.SAVE_UNINITIALIZED === "true",
+    cookie: { secure: true },
   },
   allowedOrigins: [
     "http://localhost:3000",
