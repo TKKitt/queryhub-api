@@ -28,6 +28,8 @@ const ensureAuthenticated = function (req, res, next) {
   }
 };
 
+console.log(process.env.SESSION_NAME);
+
 const middleware = [
   // Middleware for enabling CORS
   cors({
