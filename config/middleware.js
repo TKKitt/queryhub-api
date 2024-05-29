@@ -28,7 +28,7 @@ const ensureAuthenticated = function (req, res, next) {
   }
 };
 
-console.log(process.env.SESSION_NAME);
+console.log(`.env check at middleware.js${process.env.NODE_ENV}`);
 
 const middleware = [
   // Middleware for enabling CORS
