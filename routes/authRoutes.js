@@ -183,6 +183,8 @@ router.put("/:id/password", ensureAuthenticated, async (req, res) => {
       .json({ message: "You are not authorized to change this password" });
   }
 
+  console.log(`req.user.id @ authRoutes: ${req.user.id} || id: ${id}`);
+
   if (!oldPassword || !newPassword) {
     return res
       .status(400)
