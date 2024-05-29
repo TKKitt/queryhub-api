@@ -28,8 +28,6 @@ const ensureAuthenticated = function (req, res, next) {
   }
 };
 
-console.log(`.env check at middleware.js${process.env.NODE_ENV}`);
-
 const middleware = [
   // Middleware for enabling CORS
   cors({
@@ -63,7 +61,7 @@ const middleware = [
       path: "/",
       domain:
         process.env.NODE_ENV === "production"
-          ? "main.d16slcwpn8sj8r.amplifyapp.com/"
+          ? "main.d16slcwpn8sj8r.amplifyapp.com"
           : "localhost:3000",
     },
   }),
