@@ -59,8 +59,8 @@ const middleware = [
       path: "/",
       domain:
         process.env.NODE_ENV === "production"
-          ? "https://main.d16slcwpn8sj8r.amplifyapp.com/"
-          : "http://localhost:3000",
+          ? "main.d16slcwpn8sj8r.amplifyapp.com/"
+          : "localhost:3000",
     },
   }),
 
