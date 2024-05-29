@@ -56,12 +56,12 @@ const middleware = [
       // secure: process.env.NODE_ENV === "production",
       secure: process.env.NODE_ENV === "production",
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 24 * 60 * 60 * 1000,
       path: "/",
       domain:
         process.env.NODE_ENV === "production"
-          ? "main.d16slcwpn8sj8r.amplifyapp.com"
+          ? ".main.d16slcwpn8sj8r.amplifyapp.com"
           : "localhost:3000",
     },
   }),
