@@ -20,7 +20,7 @@ router.put(
   ensureAuthenticated,
   upload.single("avatar"),
   async (req, res) => {
-    if (req.user.id !== req.params.id) {
+    if (String(req.user.id) !== String(req.params.id)) {
       return res
         .status(403)
         .json({ message: "You are not authorized to update this profile" });
