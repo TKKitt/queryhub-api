@@ -19,9 +19,6 @@ const start = () => {
   const app = createApp();
   app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
-    console.log(`SESSION_NAME: ${process.env.SESSION_NAME}`);
-    console.log(`SESSION_SECRET: ${process.env.SESSION_SECRET}`);
-    console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
   });
 };
 
